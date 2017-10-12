@@ -78,7 +78,11 @@ export class ProductListComponent implements OnInit {
 
     constructor() {
         this.filteredProducts = this.products;
-        this.listFilter = 'cart';
+        this.listFilter = '';
+    }
+
+    onRatingClicked(messege: string): void {
+        this.pageTitle = 'Product List: ' + messege;
     }
 
     performFilter(filterBy: string): IProduct[] {
