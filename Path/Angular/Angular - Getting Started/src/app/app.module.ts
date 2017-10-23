@@ -9,6 +9,7 @@ import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
 import { ProductDetaiulComponent } from './products/product-detaiul.component';
 import { WelcomeComponent } from './home/welcome.component';
+import { ProductGuardService } from './products/product-guard.service';
 @NgModule({
     imports: [ 
       BrowserModule,
@@ -30,7 +31,7 @@ import { WelcomeComponent } from './home/welcome.component';
       ProductDetaiulComponent,
       WelcomeComponent
     ],
-    providers: [],
+    providers: [ProductGuardService],
     bootstrap: [ AppComponent ]
   })
 export class AppModule { }
