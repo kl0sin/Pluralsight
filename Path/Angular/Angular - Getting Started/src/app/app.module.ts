@@ -17,7 +17,9 @@ import { ProductGuardService } from './products/product-guard.service';
       HttpClientModule,
       RouterModule.forRoot([
         { path: 'products', component: ProductListComponent },
-        { path: 'products/:id', component: ProductDetaiulComponent },
+        { path: 'products/:id', 
+          canActivate: [ ProductGuardService ], 
+          component: ProductDetaiulComponent },
         { path: 'welcome', component: WelcomeComponent },
         { path: '', redirectTo: 'welcome', pathMatch: 'full' },
         { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
