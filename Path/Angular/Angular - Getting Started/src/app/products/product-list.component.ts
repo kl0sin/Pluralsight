@@ -15,10 +15,10 @@ export class ProductListComponent implements OnInit {
     errorMessage: string;
     
     _listFilter: string;
-    get listFilter(): string{
+    get listFilter(): string {
         return this._listFilter;
     }
-    set listFilter(value:string) {
+    set listFilter(value: string) {
         this._listFilter = value;
         this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
     }
@@ -27,6 +27,7 @@ export class ProductListComponent implements OnInit {
     products: IProduct[] = [];
 
     constructor(private _productService: ProductService) {
+
     }
 
     onRatingClicked(messege: string): void {
@@ -36,7 +37,7 @@ export class ProductListComponent implements OnInit {
     performFilter(filterBy: string): IProduct[] {
         filterBy = filterBy.toLocaleLowerCase();
         return this.products.filter((product: IProduct) =>
-            product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+              product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
     }
 
     toogleImage(): void{
@@ -47,8 +48,8 @@ export class ProductListComponent implements OnInit {
         this._productService.getProducts()
             .subscribe(products => {
                 this.products = products;
+                this.filteredProducts = this.products;
             },
                 error => this.errorMessage = <any>error);
-        this.filteredProducts = this.products;
     }
 }
