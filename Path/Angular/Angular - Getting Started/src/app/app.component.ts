@@ -23,5 +23,5 @@ import { ProductService } from './products/product.service';
 })
 
 export class AppComponent { 
-  pageTitle: string = "Angular Getting Started - first component";
+  pageTitle: string = "Angular Getting Started";
 }
