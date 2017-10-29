@@ -4,10 +4,10 @@ import { IProduct } from './product';
 import { ProductService } from './product.service';
 
 @Component({
-  templateUrl: './product-detaiul.component.html',
-  styleUrls: ['./product-detaiul.component.css']
+  templateUrl: './product-detail.component.html',
+  styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetaiulComponent implements OnInit {
+export class ProductDetailComponent implements OnInit {
   pageTitle: string = 'Product Detail';
   errorMessage: string;
   product: IProduct;
